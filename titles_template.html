@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标题列表</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="path/to/apple-touch-icon.png">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    // 注册成功
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, function(err) {
+                    // 注册失败
+                    console.log('Service Worker registration failed:', err);
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">标题列表</h1>
+        <ul class="list-group">
+            <!--TITLES-->
+        </ul>
+    </div>
+</body>
+
+</html>
